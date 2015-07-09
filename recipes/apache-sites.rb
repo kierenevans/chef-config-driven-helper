@@ -10,5 +10,5 @@ node["apache"]["sites"].each do |name, site_attrs|
   else
     site = definition
   end
-  ::Chef::Mixin::DeepMerge.hash_only_merge!(node.force_override['apache']['sites'][name], site)
+  ::Chef::Mixin::DeepMerge.hash_only_merge!(node.override['apache']['sites'][name], site)
 end
